@@ -16,15 +16,12 @@ The text of the button can be derived from the value of that one slice of state.
 [x] STEP 0:
   Start by studying the component below, and importing the state hook.
 
-[ ] STEP 1:
+[x] STEP 1:
   Create a 'spinnerOn', 'setSpinnerOn' pair of variables using the state hook.
   The 'spinnerOn' slice should be initialized to true so the spinner is visible on page load.
 
-[ ] STEP 2:
-  This is called a logical expression. If the expressions on both sides of the '&&' are truthy,
-  the one on the right becomes the value of the whole line. If an expression on either side of the '&&'
-  is falsy, the one on the left becomes the value of the whole line. It's a neat little trick to render
-  a React element (in this case the spinner) conditionally: only if the variable on the left is truthy.
+[x] STEP 2:
+  This is called a logical expression. If the expressions on both sides of the '&&' are truthy, the one on the right becomes the value of the whole line. If an expression on either side of the '&&' is falsy, the one on the left becomes the value of the whole line. It's a neat little trick to render a React element (in this case the spinner) conditionally: only if the variable on the left is truthy.
 
   Replace the hard-coded 'true' with the variable that keeps track of whether spinner is on or not.
 
@@ -40,6 +37,7 @@ import React, { useState } from "react"; /* STEP 0 */
 
 export default function Spinner() {
   /* STEP 1 */
+  const [spinnerOn, setSpinnerOn] = useState(true);
 
   const toggleSpinner = () => {
     /* STEP 4 */
@@ -49,7 +47,7 @@ export default function Spinner() {
     <div className="widget-spinner container">
       <h2>Spinner</h2>
       {
-        true && (
+        { spinnerOn } && (
           <div id="spinner" className="spinner">
             --+--
           </div>
