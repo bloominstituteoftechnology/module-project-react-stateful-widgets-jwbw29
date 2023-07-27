@@ -17,7 +17,7 @@ The other things can simply be _derived_ from the count itself.
 [x] STEP 0:
   - Start by studying the component below, and importing the state hook.
 
-[ ] STEP 1:
+[x] STEP 1:
   - Using the state hook, create a 'count', 'setCount' pair.
   - The 'count' state should be initialized to the number zero.
 
@@ -50,6 +50,7 @@ import React, { useState } from "react"; /*   STEP 0 */
 
 export default function Counter() {
   /* STEP 1 */
+  const [count, setCount] = useState(0);
 
   const increment = () => {
     /* STEP 4 */
@@ -64,7 +65,7 @@ export default function Counter() {
   const style = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "royalblue" /* STEP 2 */,
+    color: count % 2 === 0 ? royalblue : crimson,
   };
 
   return (
